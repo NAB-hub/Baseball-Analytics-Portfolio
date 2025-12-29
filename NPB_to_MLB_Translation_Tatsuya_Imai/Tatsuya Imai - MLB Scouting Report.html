@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)file:///C:/Users/nicho/OneDrive/Desktop/Imai_NPB_Analytics/output/IMAI_SCOUTING_REPORT.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>body{background-color:white;}</style>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tatsuya Imai - MLB Scouting Report</title><style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #ffffff;
+            color: #000000;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-shadow: none;
+            color: #000000;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 1;
+            font-weight: 400;
+            color: #000000;
+        }
+        
+        .grade-badge {
+            display: inline-block;
+            background: transparent;
+            color: #000000;
+            padding: 8px 24px;
+            border-radius: 0;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-top: 15px;
+            box-shadow: none;
+            border: 2px solid #000000;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #0d47a1;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #1565c0;
+        }
+        
+        .bottom-line {
+            background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #4caf50;
+            margin-bottom: 30px;
+        }
+        
+        .bottom-line p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #1a237e;
+            font-weight: 500;
+        }
+        
+        .projection-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .projection-box h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+            transition: transform 0.2s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #1565c0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #0d47a1;
+        }
+        
+        .arsenal-grid {
+            display: grid;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .pitch-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        
+        .pitch-card:hover {
+            border-color: #2a5298;
+            box-shadow: 0 5px 15px rgba(42, 82, 152, 0.1);
+        }
+        
+        .pitch-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .pitch-name {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #0d47a1;
+        }
+        
+        .pitch-grade {
+            background: #4caf50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+        
+        .pitch-grade.elite {
+            background: #2e7d32;
+        }
+        
+        .pitch-grade.plus {
+            background: #4caf50;
+        }
+        
+        .pitch-grade.average {
+            background: #ff9800;
+        }
+        
+        .pitch-grade.below {
+            background: #f44336;
+        }
+        
+        .pitch-details {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .strengths-list, .concerns-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .strengths-list li {
+            background: #e8f5e9;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .concerns-list li {
+            background: #fff3e0;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .comp-table thead {
+            background: #1e3c72;
+            color: white;
+        }
+        
+        .comp-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comp-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comp-table tbody tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .comp-table .highlight {
+            background: #fff9c4;
+            font-weight: 700;
+        }
+        
+        .verdict-box {
+            background: linear-gradient(135deg, #00695c 0%, #2e7d32 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 105, 92, 0.3);
+        }
+        
+        .verdict-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .verdict-box p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .methodology {
+            background: #f3e5f5;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #7b1fa2;
+        }
+        
+        .workload-plan {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .workload-plan h4 {
+            color: #0d47a1;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+    </style></head>
+
+
+
+
+    
+    
+    
+    
+
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>TATSUYA IMAI</h1>
+            <div class="subtitle">RHP | Age 26 | Saitama Seibu Lions (NPB)</div>
+            <div class="grade-badge">GRADE: A-</div>
+        </div>
+        
+        <!-- CONTENT -->
+        <div class="content">
+            
+            <!-- BOTTOM LINE -->
+            <div class="bottom-line">
+                <p><strong>Young, athletic RHP with elite bat-missing ability and improving control.</strong> Multiple changeup grips, unique reverse slider. Competitive, wants to beat the best. Projects as impact #3 starter with #2 upside.</p>
+            </div>
+            
+            <!-- PROJECTION -->
+            <div class="projection-box">
+                <h3>MLB YEAR 1 PROJECTION</h3>
+                <div class="stats-grid">
+                    <div style="color: white;">
+                        <div class="stat-label" style="color: rgba(255,255,255,0.8);">ERA+</div>
+                        <div class="stat-value" style="color: white;">112</div>
+                    </div>
+                    <div style="color: white;">
+                        <div class="stat-label" style="color: rgba(255,255,255,0.8);">FIP</div>
+                        <div class="stat-value" style="color: white;">3.99</div>
+                    </div>
+                    <div style="color: white;">
+                        <div class="stat-label" style="color: rgba(255,255,255,0.8);">INNINGS</div>
+                        <div class="stat-value" style="color: white;">165</div>
+                    </div>
+                    <div style="color: white;">
+                        <div class="stat-label" style="color: rgba(255,255,255,0.8);">WAR</div>
+                        <div class="stat-value" style="color: white;">2.5-3.0</div>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; font-size: 1.1em;"><strong>Contract:</strong> 5yr/$105M ($21M AAV + $18M posting fee)</p>
+            </div>
+            
+            <!-- 2025 NPB STATS -->
+            <div class="section">
+                <h2 class="section-title">2025 NPB Performance</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">IP</div>
+                        <div class="stat-value">163.2</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">ERA</div>
+                        <div class="stat-value">1.92</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">FIP</div>
+                        <div class="stat-value">2.70</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">K/9</div>
+                        <div class="stat-value">9.8</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">BB/9</div>
+                        <div class="stat-value">2.5</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">HR</div>
+                        <div class="stat-value">6</div>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; color: #1565c0; font-weight: 500;"><strong>Key Improvement:</strong> Control improved from 5.1 BB/9 (2022) to 2.5 BB/9 (2025) — linear 4-year trend</p>
+            </div>
+            
+            <!-- METHODOLOGY -->
+            <div class="section">
+                <h2 class="section-title">How We Got Here</h2>
+                <div class="methodology">
+                    <p><strong>Comps:</strong> Yamamoto, Imanaga, Senga, Maeda (10,361 MLB pitches analyzed)</p>
+                    <p><strong>Method:</strong> FIP-based translation (what pitchers control: K/BB/HR)</p>
+                    <br>
+                    <p><strong>NPB → MLB Translation Factors:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>FIP: 1.48x increase (2.70 × 1.48 = 3.99)</li>
+                        <li>K/9: +0.6 (better hitters to face)</li>
+                        <li>BB/9: +0.1 (minimal change)</li>
+                        <li>HR/9: +0.5 (power hitters)</li>
+                    </ul>
+                    <br>
+                    <p><strong>Result:</strong> 3.99 FIP → 112 ERA+ (12% better than average) — Above-average #3 starter</p>
+                </div>
+            </div>
+            
+            <!-- ARSENAL -->
+            <div class="section">
+                <h2 class="section-title">The Arsenal</h2>
+                <div class="arsenal-grid">
+                    <div class="pitch-card">
+                        <div class="pitch-header">
+                            <span class="pitch-name">Fastball</span>
+                            <span class="pitch-grade plus">60 Grade</span>
+                        </div>
+                        <div class="pitch-details">
+                            <strong>92-95 mph, T99</strong><br>
+                            Low release point creates rising effect up in zone. Deceptive, hitters mis-time.
+                        </div>
+                    </div>
+                    
+                    <div class="pitch-card">
+                        <div class="pitch-header">
+                            <span class="pitch-name">Reverse Slider (OUT PITCH)</span>
+                            <span class="pitch-grade elite">65 Grade</span>
+                        </div>
+                        <div class="pitch-details">
+                            <strong>84-87 mph</strong><br>
+                            Arm-side movement (unique in MLB). 46% whiff rate overall, 53% vs RHB. Dives into right-handed bats late.
+                        </div>
+                    </div>
+                    
+                    <div class="pitch-card">
+                        <div class="pitch-header">
+                            <span class="pitch-name">Changeup Arsenal</span>
+                            <span class="pitch-grade average">55 Grade</span>
+                        </div>
+                        <div class="pitch-details">
+                            <strong>82-86 mph</strong><br>
+                            Regular changeup (83-86), Vulcan change (82-85), Splitter (84-86). Multiple grips = options vs LHB.
+                        </div>
+                    </div>
+                    
+                    <div class="pitch-card">
+                        <div class="pitch-header">
+                            <span class="pitch-name">Curveball (Needs Development)</span>
+                            <span class="pitch-grade below">40 Grade</span>
+                        </div>
+                        <div class="pitch-details">
+                            Slider drops but lacks true 12-6 shape. Adding quality curve completes 6-pitch mix.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STRENGTHS -->
+            <div class="section">
+                <h2 class="section-title">What Makes Him Special</h2>
+                <ul class="strengths-list">
+                    <li>
+                        <strong>ELITE BAT-MISSING ABILITY</strong><br>
+                        3.9% barrel rate (MLB avg 7-8%) | 82.3 mph exit velo | 22.8% hard hit<br>
+                        Low release = deception = mis-timed swings
+                    </li>
+                    <li>
+                        <strong>IMPROVING COMMAND (Not volatile - linear 4-year trend)</strong><br>
+                        2022: 5.1 BB/9 → 2025: 2.5 BB/9<br>
+                        31.2% chase rate | Trust the development
+                    </li>
+                    <li>
+                        <strong>AGE 26 (Youngest since Yamamoto)</strong><br>
+                        Not a finished product | Room to grow | Prime years ahead
+                    </li>
+                    <li>
+                        <strong>COMPETITIVE FIRE</strong><br>
+                        Wants to beat Dodgers/Yankees, not join them<br>
+                        Bounced back from July struggles (0.38 ERA in August)
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- CONCERNS -->
+            <div class="section">
+                <h2 class="section-title">The Concerns (Manageable)</h2>
+                <ul class="concerns-list">
+                    <li><strong>LHB walks:</strong> 8.5% in 2025 (developing splitter to address)</li>
+                    <li><strong>Workload:</strong> Never pitched 5-day rest (165 IP cap Year 1, build gradually)</li>
+                    <li><strong>Needs curveball:</strong> Complete 6-pitch arsenal for full versatility</li>
+                </ul>
+            </div>
+            
+            <!-- COMPS TABLE -->
+            <div class="section">
+                <h2 class="section-title">The Comps</h2>
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>Pitcher</th>
+                            <th>Age</th>
+                            <th>ERA+</th>
+                            <th>Role</th>
+                            <th>Contract</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Shota Imanaga</td>
+                            <td>30</td>
+                            <td>142</td>
+                            <td>#2-3</td>
+                            <td>$53M/4yr</td>
+                        </tr>
+                        <tr>
+                            <td>Yoshinobu Yamamoto</td>
+                            <td>25</td>
+                            <td>138</td>
+                            <td>#1-2</td>
+                            <td>$325M/12yr</td>
+                        </tr>
+                        <tr>
+                            <td>Kodai Senga</td>
+                            <td>30</td>
+                            <td>135</td>
+                            <td>#2-3</td>
+                            <td>$75M/5yr</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td><strong>Tatsuya Imai</strong></td>
+                            <td><strong>26</strong></td>
+                            <td><strong>112</strong></td>
+                            <td><strong>#3</strong></td>
+                            <td><strong>$105M/5yr</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Kenta Maeda</td>
+                            <td>28</td>
+                            <td>120</td>
+                            <td>#3</td>
+                            <td>$25M/8yr</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 15px; color: #1565c0; font-weight: 500;">Younger than all except Yamamoto. Better value than Senga at comparable AAV.</p>
+            </div>
+            
+            <!-- YEAR 1 PLAN -->
+            <div class="section">
+                <h2 class="section-title">Year 1 Plan</h2>
+                <div class="workload-plan">
+                    <h4>April-May</h4>
+                    <p>6-day rest, 80-90 pitches (build arm)</p>
+                </div>
+                <div class="workload-plan">
+                    <h4>June-July</h4>
+                    <p>Transition to 5-day, 90-100 pitches</p>
+                </div>
+                <div class="workload-plan">
+                    <h4>August-September</h4>
+                    <p>Full 5-day, 95-105 pitches</p>
+                </div>
+                <p style="margin-top: 15px; color: #1565c0; font-weight: 500;"><strong>Target:</strong> 165 IP, 26-28 starts | <strong>Model:</strong> Yamamoto 2024 (conservative → 2025 WS MVP)</p>
+            </div>
+            
+            <!-- VERDICT -->
+            <div class="verdict-box">
+                <h3>The Verdict</h3>
+                <p>Young, athletic, elite bat-misser with developing arsenal. 4-year improvement trajectory. Competitive. Age 26 prime window. 112 ERA+ = impact #3 starter with #2 upside if changeup/curve develop.</p>
+                <br>
+                <p><strong>Years 1-2:</strong> 112-118 ERA+, 165-180 IP, 2.5-3.0 WAR</p>
+                <p><strong>Years 3-5:</strong> 120-125 ERA+, 180+ IP, 3.5-4.0 WAR (peak)</p>
+                <br>
+                <p><strong>Value:</strong> $21M AAV for above-average starter = market rate. Cheaper than FA alternatives (Burnes $200M+, Fried $180M+). Younger, higher ceiling than typical 30-34 year old FA starters.</p>
+                <br>
+                <h3 style="font-size: 1.5em; margin-top: 20px;">Acquire at $100-110M. He's the real deal.</h3>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+</body></html>
