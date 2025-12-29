@@ -84,4 +84,4 @@ At an estimated $21M AAV and a total outlay in the $100–110M range, he profile
 
 ## Files
 
-- [Full Scouting Report (PDF/HTML)](./IMAI_SCOUTING_REPORT.pdf) - Complete detailed analysis
+- [Full Scouting Report (HTML)](./Tatsuya%20Imai%20-%20MLB%20Scouting%20Report.html) - Complete detailed analysis
