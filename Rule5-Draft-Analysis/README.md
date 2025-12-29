@@ -19,11 +19,8 @@ Identify high-upside, cost-controlled talent eligible for the Rule 5 Draft by an
 - Developed risk assessment framework
 
 ## Files
-- `Rule5_Pitchers_Brief.pdf` - Detailed pitcher analysis
-- `Rule5_Hitters_Brief.pdf` - Position player analysis
-- `analysis.R` - R code for data processing and visualization
-- `data/` - Sample data (anonymized)
-
+- [`Rule5_Pitchers_Brief_Concise.html`](Rule5_Pitchers_Brief_Concise.html) - Detailed pitcher analysis-
+- [`Rule5_Hitters_Brief_Concise.html`](Rule5_Hitters_Brief_Concise.html) - Position player analysis-
 ## Tools & Technologies
 - R (tidyverse, ggplot2)
 - Statistical Analysis
